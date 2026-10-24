@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSHER Açaí Shop — Açaí + Sorvete. Do seu jeito.</title>
+  <meta name="description" content="A OSHER Açaí Shop combina açaí artesanal puro e gelato italiano com personalização completa. Peça seu açaí no copo ou bowl com entrega expressa premium.">
+  <meta name="keywords" content="açaí delivery, sorvete artesanal, gelato, açaí gourmet, osher açaí shop, monte o seu açaí">
+  
+  <!-- Favicon SVG com o monograma oficial OSHER -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23EA9F1D'/%3E%3Cstop offset='100%25' stop-color='%23D27F02'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23141414'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='url(%23g)' stroke-width='7'/%3E%3Cpath d='M36 50 C36 62, 64 62, 64 50' fill='none' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='42' r='7' fill='url(%23g)'/%3E%3C/svg%3E">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar-announcement">
+    <span>✨ Entrega expressa com embalagem térmica lacrada</span>
+    <span class="coupon-pill">Use o cupom: OSHER10 (10% OFF)</span>
+    <span>• Horário: Ter a Dom das 12h às 23h</span>
+  </div>
+
+  <!-- Header & Navegação Fixa -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      
+      <!-- Logotipo Oficial da Marca OSHER (Baseado no Brandkit) -->
+      <a href="#inicio" class="brand-logo" aria-label="OSHER Açaí Shop - Página Inicial">
+        <!-- Símbolo: O monograma com o arco de acolhimento e a figura central -->
+        <svg class="logo-symbol" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="osherGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#EA9F1D"/>
+              <stop offset="100%" stop-color="#D27F02"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="44" stroke="url(#osherGoldGrad)" stroke-width="6"/>
+          <!-- Arco sorriso/tigela -->
+          <path d="M28 54 C28 72, 72 72, 72 54" stroke="url(#osherGoldGrad)" stroke-width="7" stroke-linecap="round"/>
+          <!-- Figura central acolhida / semente dourada -->
+          <circle cx="50" cy="42" r="9" fill="url(#osherGoldGrad)"/>
+        </svg>
+
+        <div class="logo-text-group">
+          <span class="brand-name">OSHER</span>
+          <span class="brand-subline">AÇAÍ SHOP</span>
+          <div class="brand-fillet-sub"></div>
+        </div>
+      </a>
+
+      <!-- Links de Navegação -->
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#monte-seu-jeito" class="nav-link">Monte o Seu</a></li>
+          <li><a href="#catalogo" class="nav-link">Cardápio & Delivery</a></li>
+          <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+          <li><a href="#sobre" class="nav-link">A Marca</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações: Tema Claro/Noturno e Carrinho -->
+      <div class="nav-actions">
+        <!-- Botão Alternador de Tema -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar entre modo claro e noturno" title="Alternar tema">
+          <!-- Ícone Sol (Modo Claro) -->
+          <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Ícone Lua (Modo Noturno) -->
+          <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Botão Carrinho com Contador Dinâmico -->
+        <button class="cart-header-btn" id="cartHeaderBtn" aria-label="Ver sacola de compras">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Pedido</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <a href="#catalogo" class="btn btn-gold" style="display: none;">Pedir Agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- =======================================================================
+         HERO SECTION EM SLIDES (CHAMATIVO COM PRODUTOS E PROMOÇÕES)
+         ======================================================================= -->
+    <section class="hero-slider-section" aria-label="Destaques e Ofertas da Semana">
+      <div class="hero-slider-track" id="heroSliderTrack">
+
+        <!-- SLIDE 1: Ponto de partida & Essência OSHER -->
+        <article class="hero-slide" data-slide="0">
+          <div class="container hero-slide-grid">
+            <div class="hero-content">
+              <span class="hero-tag-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Coleção Assinatura Imperial
+              </span>
+              <h1 class="hero-title">
+                O Açaí Que Você Merece. <br>
+                <span class="gold-accent">Do seu jeito.</span>
+              </h1>
+              <p class="hero-subtitle">
+                Acolhimento com sofisticação. Polpa pura amazônica combinada a frutas frescas colhidas no dia, calda de mel silvestre dourado e acompanhamentos nobres.
+              </p>
+              <div class="hero-actions-group">
+                <a href="#catalogo" class="btn btn-gold">
+                  <span>Explorar Cardápio</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#monte-seu-jeito" class="btn btn-outline">
+                  <span>Montar Meu Açaí</span>
+                </a>
+              </div>
+              <div class="hero-specs-row">
+                <div class="spec-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>100% Puro Sem Conservantes</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>Entrega em 25 a 40 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual-wrap">
+              <div class="hero-img-frame">
+                <img src="assets/images/hero-acai-bowl.jpg" alt="Bowl Gourmet OSHER com frutas frescas e mel dourado" loading="eager">
+              </div>
+              <div class="hero-floating-pill">
+                <div class="pill-icon">★</div>
+                <div class="pill-text">
+                  <strong>Bowl Ouro Imperial</strong>
+                  <span>Receita mais elogiada de 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 2: Duo Fusion Açaí + Sorvete Artesanal -->
+        <article class="hero-slide" data-slide="1">
+          <div class="container hero-slide-grid">
+            <div class="hero-content">
+              <span class="hero-tag-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                Novidade Exclusiva OSHER
+              </span>
+              <h2 class="hero-title">
+                Duo Fusion: <br>
+                <span class="gold-accent">Açaí + Gelato Italiano.</span>
+              </h2>
+              <p class="hero-subtitle">
+                O equilíbrio perfeito entre a intensidade do açaí e a cremosidade do gelato de pistache Bronte ou fava de baunilha Bourbon. Uma experiência sensorial única.
+              </p>
+              <div class="hero-actions-group">
+                <a href="#catalogo" class="btn btn-gold">
+                  <span>Pedir Duo Fusion</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <span style="font-size: 0.88rem; color: var(--gold-deep); font-weight: 600;">Use cupom: <strong>DOSEUJEITO</strong></span>
+              </div>
+              <div class="hero-specs-row">
+                <div class="spec-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Gelato Artesanal Diário</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Textura Aveludada OSHER</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual-wrap">
+              <div class="hero-img-frame">
+                <img src="assets/images/hero-duo-fusion.jpg" alt="Duo Fusion Açaí e Gelato Artesanal em harmonia" loading="lazy">
+              </div>
+              <div class="hero-floating-pill">
+                <div class="pill-icon">🍨</div>
+                <div class="pill-text">
+                  <strong>Pistache & Açaí Duo</strong>
+                  <span>A combinação favorita dos clientes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 3: Delivery Premium em Casa -->
+        <article class="hero-slide" data-slide="2">
+          <div class="container hero-slide-grid">
+            <div class="hero-content">
+              <span class="hero-tag-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Embalagem Térmica com Selo Dourado
+              </span>
+              <h2 class="hero-title">
+                Seu Pedido Chega Geladinho. <br>
+                <span class="gold-accent">Como deve ser.</span>
+              </h2>
+              <p class="hero-subtitle">
+                Desenvolvemos embalagens térmicas exclusivas com lacre dourado de proteção e recipientes selados para que seus complementos cheguem crocantes.
+              </p>
+              <div class="hero-actions-group">
+                <a href="#catalogo" class="btn btn-gold">
+                  <span>Pedir Delivery Agora</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+              <div class="hero-specs-row">
+                <div class="spec-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Lacre Inviolável Hot Stamping</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Crocância Garantida</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual-wrap">
+              <div class="hero-img-frame">
+                <img src="assets/images/hero-delivery-cup.jpg" alt="Copo de Açaí Delivery OSHER em camadas com sacola dourada" loading="lazy">
+              </div>
+              <div class="hero-floating-pill">
+                <div class="pill-icon">⚡</div>
+                <div class="pill-text">
+                  <strong>Entrega Expressa OSHER</strong>
+                  <span>Monitoramento em tempo real</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Setas de Navegação do Slider -->
+      <button class="slider-arrow-btn slider-prev" id="prevSlideBtn" aria-label="Slide anterior">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="slider-arrow-btn slider-next" id="nextSlideBtn" aria-label="Próximo slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Indicadores de Pontos (Dots) -->
+      <div class="slider-dots-container" id="sliderDotsContainer">
+        <button class="slider-dot active" data-index="0" aria-label="Ir para slide 1"></button>
+        <button class="slider-dot" data-index="1" aria-label="Ir para slide 2"></button>
+        <button class="slider-dot" data-index="2" aria-label="Ir para slide 3"></button>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         BARRA DE VANTAGENS / DIFERENCIAIS DA MARCA
+         ======================================================================= -->
+    <section class="brand-features-bar" id="diferenciais" aria-label="Vantagens da OSHER">
+      <div class="container">
+        <div class="features-grid">
+          
+          <div class="feature-box">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="feature-content">
+              <h4>Açaí Puro & Natural</h4>
+              <p>Origem sustentável da Amazônia, sem xaropes artificiais ou corantes.</p>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="feature-content">
+              <h4>Gelato Artesanal Diário</h4>
+              <p>Receitas italianas produzidas todos os dias na nossa cozinha própria.</p>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="feature-content">
+              <h4>Do Seu Jeito</h4>
+              <p>Você escolhe o tamanho, a base, as frutas e as caldas sem limites.</p>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div class="feature-content">
+              <h4>Embalagem Selada Térmica</h4>
+              <p>Mantém a consistência perfeita até o momento da primeira colherada.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         SEÇÃO INTERATIVA: MONTE DO SEU JEITO
+         ======================================================================= -->
+    <section class="customizer-section" id="monte-seu-jeito" aria-label="Personalizador de Açaí">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="label-caps">Personalização Total</span>
+          <h2>Açaí + Sorvete. Do seu jeito.</h2>
+          <div class="osher-fillet"></div>
+          <p>Seja o chef da sua própria sobremesa. Escolha as camadas, bases e complementos que você mais ama.</p>
+        </div>
+
+        <div class="customizer-card-wrapper">
+          
+          <!-- Passos de Personalização -->
+          <div class="customizer-steps-area">
+            
+            <!-- Passo 1: Tamanho -->
+            <div class="step-block">
+              <h3><span class="step-number">1</span> Escolha o Tamanho do seu Recipiente</h3>
+              <div class="options-grid" id="customizerSizesGrid"></div>
+            </div>
+
+            <!-- Passo 2: Base -->
+            <div class="step-block">
+              <h3><span class="step-number">2</span> Selecione a Base Desejada</h3>
+              <div class="options-grid" id="customizerBasesGrid"></div>
+            </div>
+
+            <!-- Passo 3: Frutas -->
+            <div class="step-block">
+              <h3><span class="step-number">3</span> Frutas Frescas Cortadas na Hora</h3>
+              <div class="tags-selector-grid" id="customizerFruitsGrid"></div>
+            </div>
+
+            <!-- Passo 4: Crocantes & Complementos -->
+            <div class="step-block">
+              <h3><span class="step-number">4</span> Crocantes & Complementos Nobres</h3>
+              <div class="tags-selector-grid" id="customizerCrunchiesGrid"></div>
+            </div>
+
+            <!-- Passo 5: Caldas -->
+            <div class="step-block">
+              <h3><span class="step-number">5</span> Caldas & Coberturas Especiais</h3>
+              <div class="tags-selector-grid" id="customizerSyrupsGrid"></div>
+            </div>
+
+          </div>
+
+          <!-- Resumo Lateral em Tempo Real -->
+          <aside class="customizer-summary-sidebar">
+            <div>
+              <span class="label-caps">Resumo do Pedido</span>
+              <h3 class="summary-title">Sua Criação OSHER</h3>
+              <div class="osher-fillet left"></div>
+
+              <ul class="summary-list">
+                <li>
+                  <span class="item-title">Tamanho:</span>
+                  <span class="item-val" id="summarySize">Copo 500ml</span>
+                </li>
+                <li>
+                  <span class="item-title">Base:</span>
+                  <span class="item-val" id="summaryBase">Açaí Tradicional Puro</span>
+                </li>
+                <li>
+                  <span class="item-title">Frutas:</span>
+                  <span class="item-val" id="summaryFruits">Morango, Banana</span>
+                </li>
+                <li>
+                  <span class="item-title">Crocantes:</span>
+                  <span class="item-val" id="summaryCrunchies">Granola, Leite Ninho</span>
+                </li>
+                <li>
+                  <span class="item-title">Calda:</span>
+                  <span class="item-val" id="summarySyrups">Mel Silvestre Dourado</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="summary-total-row">
+                <span>Total Estimado</span>
+                <span class="summary-total-price" id="customizerTotalPrice">R$ 26,90</span>
+              </div>
+
+              <button class="btn btn-gold" id="addCustomAcaiBtn" style="width: 100%;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+                <span>Adicionar ao Meu Pedido</span>
+              </button>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         CATÁLOGO COMPLETO & CARDÁPIO DE PRODUTOS
+         ======================================================================= -->
+    <section class="catalog-section" id="catalogo" aria-label="Cardápio Oficial Delivery">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="label-caps">Cardápio & Delivery</span>
+          <h2>Nossas Criações Assinadas</h2>
+          <div class="osher-fillet"></div>
+          <p>Receitas testadas e aprimoradas para proporcionar momentos de puro acolhimento e prazer.</p>
+        </div>
+
+        <!-- Controles: Categorias e Campo de Busca -->
+        <div class="catalog-controls-bar">
+          <div class="category-tabs" role="tablist">
+            <button class="category-tab-btn active" data-category="all" role="tab">Todos</button>
+            <button class="category-tab-btn" data-category="copos" role="tab">Copos</button>
+            <button class="category-tab-btn" data-category="bowls" role="tab">Bowls Gourmet</button>
+            <button class="category-tab-btn" data-category="duo" role="tab">Duo Fusion</button>
+            <button class="category-tab-btn" data-category="sorvetes" role="tab">Gelatos Artesanais</button>
+            <button class="category-tab-btn" data-category="shakes" role="tab">Shakes & Smoothies</button>
+            <button class="category-tab-btn" data-category="combos" role="tab">Combos em Casa</button>
+          </div>
+
+          <div class="catalog-search-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="catalog-search-input" id="catalogSearchInput" placeholder="Buscar por sabor ou ingrediente...">
+          </div>
+        </div>
+
+        <!-- Grid de Produtos Renderizado pelo JS -->
+        <div class="products-grid" id="productsGrid"></div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         SEÇÃO SOBRE A MARCA & MANIFESTO OSHER
+         ======================================================================= -->
+    <section class="catalog-section" id="sobre" style="background: var(--bg-subtle); border-top: 1px solid var(--border-light);" aria-label="Sobre a Marca OSHER">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+          
+          <div>
+            <span class="label-caps">Nossa Filosofia</span>
+            <h2 style="font-size: 2.8rem; margin: 8px 0 16px; color: var(--text-main);">Uma marca para ser escolhida e lembrada.</h2>
+            <div class="osher-fillet left"></div>
+            
+            <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.7;">
+              A OSHER Açaí Shop nasceu para reinventar a experiência do açaí e do sorvete. Substituímos o roxo e o verde saturados que dominavam o nicho por tons nobres de <strong>ouro, grafite e off-white</strong>.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 28px; line-height: 1.7;">
+              O resultado é uma marca que acolhe com sofisticação, mantendo você no centro de tudo: desde os ingredientes selecionados até a personalização meticulosa de cada copo.
+            </p>
+
+            <div style="display: flex; gap: 30px;">
+              <div>
+                <strong style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold-deep); display: block;">+15k</strong>
+                <span style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase;">Pedidos Entregues</span>
+              </div>
+              <div style="width: 1px; background: var(--border-light);"></div>
+              <div>
+                <strong style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold-deep); display: block;">4.9★</strong>
+                <span style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase;">Avaliação Média</span>
+              </div>
+              <div style="width: 1px; background: var(--border-light);"></div>
+              <div>
+                <strong style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold-deep); display: block;">100%</strong>
+                <span style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase;">Artesanal Puro</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="position: relative;">
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border-gold-subtle);">
+              <img src="assets/images/hero-acai-bowl.jpg" alt="Apresentação da marca OSHER Açaí Shop" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="position: absolute; bottom: -20px; right: 20px; background: var(--bg-card); padding: 18px 24px; border-radius: var(--radius-md); border: 1px solid var(--border-gold-subtle); box-shadow: var(--shadow-md);">
+              <span style="font-family: var(--font-serif); font-style: italic; font-size: 1.25rem; color: var(--gold-deep);">"Do seu jeito."</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================================
+       DRAWER LATERAL DO CARRINHO (DELIVERY)
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de Compras">
+    
+    <div class="cart-drawer-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+        <span>Seu Pedido</span>
+      </h3>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Fechar carrinho">✕</button>
+    </div>
+
+    <!-- Lista de Itens no Carrinho -->
+    <div class="cart-drawer-body" id="cartItemsList"></div>
+
+    <!-- Rodapé com Cálculos e Finalização -->
+    <div class="cart-drawer-footer">
+      
+      <!-- Cupom de Desconto -->
+      <div class="coupon-input-wrap">
+        <input type="text" class="coupon-input" id="couponInput" placeholder="Cupom (ex: OSHER10)">
+        <button class="btn btn-outline" id="applyCouponBtn" style="padding: 10px 18px; font-size: 0.85rem;">Aplicar</button>
+      </div>
+
+      <!-- Linhas de Cálculo -->
+      <div class="cart-calc-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">R$ 0,00</span>
+      </div>
+
+      <div class="cart-calc-row" id="cartDiscountRow" style="display: none; color: #2E7D32;">
+        <span>Desconto do Cupom</span>
+        <span id="cartDiscountAmount">- R$ 0,00</span>
+      </div>
+
+      <div class="cart-calc-row">
+        <span>Taxa de Entrega</span>
+        <span id="cartDeliveryFee">R$ 6,00</span>
+      </div>
+
+      <div class="cart-total-final-row">
+        <span>Total a Pagar</span>
+        <span class="price" id="cartTotalAmount">R$ 0,00</span>
+      </div>
+
+      <button class="btn btn-gold" id="checkoutProceedBtn" style="width: 100%; padding: 15px;">
+        <span>Continuar para Entrega</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+  </aside>
+
+
+  <!-- =========================================================================
+       MODAL DE CHECKOUT & SESSÃO DE PEDIDOS (DELIVERY & WHATSAPP)
+       ========================================================================= -->
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal-container">
+      
+      <div class="modal-header">
+        <h3 id="modalTitle">Finalizar Pedido Delivery</h3>
+        <button class="cart-close-btn" id="checkoutCloseBtn" aria-label="Fechar janela">✕</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <form id="checkoutForm">
+          
+          <div class="form-group-grid">
+            
+            <div class="form-field">
+              <label for="customerName">Nome Completo *</label>
+              <input type="text" id="customerName" class="form-input" placeholder="Ex: Ana Clara Souza" required>
+            </div>
+
+            <div class="form-field">
+              <label for="customerPhone">WhatsApp com DDD *</label>
+              <input type="tel" id="customerPhone" class="form-input" placeholder="Ex: (11) 98765-4321" required>
+            </div>
+
+            <div class="form-field full-width">
+              <label for="customerAddress">Endereço de Entrega Completo *</label>
+              <input type="text" id="customerAddress" class="form-input" placeholder="Rua, Número, Bairro, Complemento" required>
+            </div>
+
+            <div class="form-field full-width">
+              <label for="orderNotes">Observações para o Pedido ou Entregador (Opcional)</label>
+              <textarea id="orderNotes" class="form-textarea" rows="2" placeholder="Ex: Pouca calda de mel, tocar interfone no 42..."></textarea>
+            </div>
+
+          </div>
+
+          <!-- Seleção de Forma de Pagamento -->
+          <div style="margin-top: 24px;">
+            <label style="font-size: 0.84rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 10px;">
+              Forma de Pagamento *
+            </label>
+            <div class="payment-methods-grid">
+              
+              <div class="payment-card-opt selected" data-payment="PIX">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg>
+                <span>PIX Instantâneo</span>
+              </div>
+
+              <div class="payment-card-opt" data-payment="Cartão na Entrega">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                <span>Cartão (Débito/Crédito)</span>
+              </div>
+
+              <div class="payment-card-opt" data-payment="Dinheiro">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle></svg>
+                <span>Dinheiro / Troco</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div style="margin-top: 30px;">
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 1rem;">
+              <span>Confirmar & Enviar Pedido</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">
+              🔒 Seus dados estão seguros. Ao confirmar, seu pedido será gerado e enviado diretamente para nosso atendimento.
+            </p>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       BOTÃO LEVAR AO TOPO (BACK TO TOP) COM ANEL DE PROGRESSO CIRCULAR
+       ========================================================================= -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Voltar ao topo da página" title="Voltar ao Topo">
+    <svg class="scroll-progress-ring" viewBox="0 0 52 52">
+      <circle cx="26" cy="26" r="25" id="scrollProgressCircle"></circle>
+    </svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+
+  <!-- =========================================================================
+       RODAPÉ (FOOTER LUXUOSO COM IDENTIDADE COMPLETA)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Coluna Marca -->
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <svg width="34" height="34" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="44" stroke="#EA9F1D" stroke-width="7"/>
+              <path d="M28 54 C28 72, 72 72, 72 54" stroke="#EA9F1D" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="50" cy="42" r="9" fill="#EA9F1D"/>
+            </svg>
+            <span style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; letter-spacing: 0.16em;">OSHER</span>
+          </div>
+          <p>
+            Açaí + Sorvete. Do seu jeito.<br>
+            Acolhimento com sofisticação: cada cliente no centro da experiência.
+          </p>
+          <div style="display: flex; gap: 14px;">
+            <a href="#" style="color: #EA9F1D; font-size: 1.2rem;" aria-label="Instagram">📸</a>
+            <a href="#" style="color: #EA9F1D; font-size: 1.2rem;" aria-label="WhatsApp">💬</a>
+            <a href="#" style="color: #EA9F1D; font-size: 1.2rem;" aria-label="Facebook">🌐</a>
+          </div>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#monte-seu-jeito">Monte do Seu Jeito</a></li>
+            <li><a href="#catalogo">Cardápio & Delivery</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#sobre">A Marca OSHER</a></li>
+          </ul>
+        </div>
+
+        <!-- Horários & Atendimento -->
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Terça a Sexta: 12h às 23h</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Sábados e Domingos: 11h às 23h30</span>
+          </div>
+          <div class="footer-contact-item" style="color: #EA9F1D; font-weight: 600;">
+            <span>Segundas-feiras: Fechado</span>
+          </div>
+        </div>
+
+        <!-- Contato & Delivery -->
+        <div class="footer-col">
+          <h4>Delivery Oficial</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>(11) 99999-9999</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Av. Paulista, 1200 — Jardins, SP</span>
+          </div>
+          <div style="margin-top: 14px;">
+            <span class="label-caps" style="color: #EA9F1D;">Lacre de Qualidade Garantido</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 OSHER Açaí Shop. Todos os direitos reservados.</span>
+        <span>Identidade Visual: Ouro (#EA9F1D), Grafite (#222222) e Off-White (#FAF8F5).</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
